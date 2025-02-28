@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>My Calendar</title>
+</head>
+<body>
+    <section class="calendar-container" role="region" aria-label="Interactive Calendar">
+        <header class="month-year">
+            <h2>
+                <span class="month-name" id="month-name">Month</span>
+                <span class="year-name" id="year-name">Year</span>
+            </h2>
+        </header>
+        <div class="cal-days" id="cal-days" aria-hidden="true">
+            <!-- Dynamically generated days -->
+        </div>
+        <div class="cal-dates" id="cal-dates" role="grid">
+            <!-- Dynamically generated dates -->
+        </div>
+        <nav class="cal-nav">
+            <button id="cal-prev" aria-label="Previous Month">Previous</button>
+            <button id="cal-next" aria-label="Next Month">Next</button>
+        </nav>
+    </section>
+    <script src="script.js" type="module"></script>
+</body>
+</html>

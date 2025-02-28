@@ -1,0 +1,125 @@
+/* Use CSS variables for themes */
+:root {
+    --primary-bg: #ffffff;
+    --secondary-bg: #f4f4f9;
+    --primary-text: #313131;
+    --secondary-text: #434343;
+    --highlight: #ff0000;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+}
+
+.calendar-container {
+    max-width: 60%;
+    height: auto;
+    margin: 20px auto;
+    background: var(--primary-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.month-year {
+    text-align: center;
+    padding: 15px;
+    background: var(--secondary-text);
+    color: white;
+}
+
+.cal-days,
+.cal-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.cal-dates.slide-left {
+    opacity: 0;
+    transform: translateX(-15px);
+}
+
+.cal-dates.slide-right {
+    opacity: 0;
+    transform: translateX(15px);
+}
+
+.cal-days span {
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: var(--secondary-text);
+    padding: 10px 0;
+}
+
+.cal-dates .date-box {
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cal-dates .date-box:hover {
+    background-color: var(--secondary-bg);
+}
+
+.cal-dates .todayDate {
+    background-color: var(--highlight);
+    color: white;
+    font-weight: bold;
+}
+
+.cal-dates .inactive {
+    color: #c1c0c0;
+    cursor: not-allowed;
+}
+
+.cal-dates .holiday {
+    background-color: #ffe0e0; /* Light red background */
+    border: 2px solid #ff0000; /* Red border */
+    color: #ff0000; /* Red text */
+}
+
+.cal-dates .holiday.cuti {
+    background-color: #e0f7fa; /* Light blue background for days off */
+    border: 2px solid #00bcd4; /* Blue border */
+}
+
+.cal-nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.cal-nav button {
+    padding: 10px 20px;
+    background-color: var(--secondary-text);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cal-nav button:hover {
+    background-color: var(--highlight);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .calendar-container {
+        max-width: 90%;
+    }
+
+    .cal-days span,
+    .cal-dates .date-box {
+        padding: 8px 0;
+    }
+}
